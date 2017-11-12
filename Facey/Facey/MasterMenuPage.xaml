@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="Facey.MasterMenuPage"
+             Title="Master Menu">
+    <StackLayout VerticalOptions="Fill" HorizontalOptions="FillAndExpand">
+        <forms:CachedImage x:Name="TitleImage" HeightRequest="150" HorizontalOptions="FillAndExpand" Source="icon.png" Aspect="AspectFill"/>
+        <ListView x:Name="MenuList" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                  SeparatorVisibility="None" Margin="10">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="{Binding IconSource}" WidthRequest="40" />
+                            <Label Text="{Binding Title}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"
+                                   HorizontalTextAlignment="Start" />
+                        </StackLayout>
+                    </ViewCell>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label Text="Cammy" HorizontalOptions="CenterAndExpand" Margin="10" />
+    </StackLayout>
+</ContentPage>

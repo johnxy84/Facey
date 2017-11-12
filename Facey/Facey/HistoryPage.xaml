@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             Title="History"
+             xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             x:Class="Facey.HistoryPage">
+    <ListView x:Name="HistoryList" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+              CachingStrategy="RecycleElement" ItemSelected="HistoryList_OnItemSelected"
+              HasUnevenRows="True" SeparatorVisibility="None">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Margin="5">
+                        <forms:CachedImage HeightRequest="100" WidthRequest="100" BitmapOptimizations="True" Margin="10" Aspect="AspectFill"
+                                           Source="{Binding FilePath}" >
+                          
+                        </forms:CachedImage>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="{Binding Time}" FontAttributes="Bold" Font="Large" />
+                            <Label Text="{Binding FaceData.FaceAttributes.Gender}" />
+                            <Label Text="{Binding FaceData.FaceAttributes.Age}" />
+
+                        </StackLayout>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

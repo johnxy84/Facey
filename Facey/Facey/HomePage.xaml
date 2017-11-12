@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Facey.HomePage"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+
+             Title="Home">
+    <ContentPage.Content>
+        <StackLayout>
+            <ActivityIndicator x:Name="Loader" IsEnabled="True" IsRunning="False" IsVisible="False" />
+            <Image x:Name="Image" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="10" />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Fill" Margin="10">
+                <Button x:Name="TakePhotoButton" Text="Take Photo" Clicked="Button_OnClicked" />
+                <Button x:Name="ANalyzeButton" Text="Analyze" Clicked="Analyze_Button_OnClicked" IsVisible="False" />
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
